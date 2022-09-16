@@ -2,15 +2,20 @@
     --head-color: #C65146;
     --body-color: #EC6A5C;
     --hover-color: #AF4034;
-    --text-color: #FFE4E0;
     
-
+    --relax-head-color: #379392;
+    --relax-body-color: #519D9E;
+    
+    --text-color: #FFE4E0;
 }
 
 body {
     margin: 0;
     font-family: 'jua';
     background: var(--body-color);
+}
+body.relax {
+    background: var(--relax-body-color);
 }
 
 a {
@@ -24,6 +29,9 @@ a {
 
     background: var(--head-color);
     padding: 4px 24px;
+}
+.navbar.relax {
+    background: var(--relax-head-color);
 }
 
 .navbar__logo {
@@ -58,7 +66,7 @@ a {
     border-radius: 10px;
     background: rgba(255,255,255,0.1);
 
-    margin: 10vh auto;
+    margin: 20vh auto;
     width: 580px;
 
     display: flex;
