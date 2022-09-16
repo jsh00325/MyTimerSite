@@ -3,9 +3,6 @@
     --body-color: #EC6A5C;
     --hover-color: #AF4034;
     
-    --relax-head-color: #379392;
-    --relax-body-color: #519D9E;
-    
     --text-color: #FFE4E0;
 }
 
@@ -14,36 +11,41 @@ body {
     font-family: 'jua';
     background: var(--body-color);
 }
-body.relax {
-    background: var(--relax-body-color);
-}
-
 a {
     text-decoration: none;
     color: var(--text-color);
 }
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     background: var(--head-color);
-    padding: 4px 24px;
-}
-.navbar.relax {
-    background: var(--relax-head-color);
+    padding: 4px 12px;
 }
 
 .navbar__logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     font-size: 24px;
     color: var(--text-color);
     padding: 6px 12px;
+}
+.navbar__logo a {
+    margin: 0px 12px;
+}
+#small_title {
+    display: none;
 }
 
 .navbar__menu {
     display: flex;
     justify-content: space-between;
     list-style: none;
+    font-size: 18px;
     padding-left: 0;
 }
 .navbar__menu li {
@@ -54,31 +56,35 @@ a {
     background-color: var(--hover-color);
 }
 
-.navbar__toggleBtn {
+.navbar__button {
     display: none;
-    position: absolute;
-    top: 23px;
-    right: 32px;
-    font-size: 24px;
+    justify-content: space-between;
+    font-size: 18px;
+    list-style: none;
+}
+.navbar__button a {
+    padding: 6px 12px;
+}
+.navbar__button a:hover {
+    border-radius: 4px;
+    background-color: var(--hover-color);
 }
 
 .timer {
     border-radius: 10px;
     background: rgba(255,255,255,0.1);
 
-    margin: 20vh auto;
+    margin: 10vh auto;
     width: 580px;
 
     display: flex;
     flex-flow: column wrap;
     align-items: center;
 }
-
 .timer__clock {
     color: var(--text-color);
     font-size: 200px;
 }
-
 .timer__button {
     background: none;
     border: none;
@@ -88,37 +94,13 @@ a {
 .timer__button__pause {
     display: none;
 }
-hr {
-    border: 1px solid rgba(0,0,0,0.5);
-}
-
-#relax {
-    display: none;
-}
 
 @media screen and (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 13px 24px;
-    }
-
     .navbar__menu {
         display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-    .navbar__menu li {
-        width: 100%;
-        text-align: center;
     }
 
-    .navbar__toggleBtn {
-        display: block;
-    }
-
-    .navbar__menu.active {
+    .navbar__button {
         display: flex;
     }
 
@@ -130,5 +112,13 @@ hr {
     }
     .timer__button {
         font-size: 16.5vw;
+    }
+}
+@media screen and (max-width: 368px) {
+    #normal_title {
+        display: none;
+    }
+    #small_title {
+        display: block;
     }
 }

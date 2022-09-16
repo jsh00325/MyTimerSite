@@ -1,21 +1,27 @@
-const navbar = document.querySelector('.navbar');
-const toggleBtn = document.querySelector('.navbar__toggleBtn');
-const menu = document.querySelector('.navbar__menu');
 const body = document.querySelector('body');
+
+const navbar = document.querySelector('.navbar');
+
+const reports = document.querySelectorAll('#report');
+const settings = document.querySelectorAll('#setting');
+const setting_menu = document.querySelector('.navbar__menu #setting');
+const setting_icon = document.querySelector('.navbar__button #setting');
+
 const timer_html = document.querySelector('.timer__clock');
 const playBtn = document.querySelector('.timer__button__play');
 const pauseBtn = document.querySelector('.timer__button__pause');
 
+const work_head_color = "#C65146", relax_head_color = "#379392";
+const work_body_color = "#EC6A5C", relax_body_color = "#519D9E";
+const work_hover_color = "#AF4034", relax_hover_color = "#548687";
+
 const alarm = [new Audio('sound/alarm1.mp3'), new Audio('sound/alarm2.mp3')];
-const work_time = 30, relax_time = 10;
+const work_time = 1, relax_time = 1;
 
 var isWork = true, time, timer;
 
 init_var();
 
-toggleBtn.addEventListener('click', () => {
-    menu.classList.toggle('active');
-});
 playBtn.addEventListener('click', () => {
     start_timer(timer_html);
     playBtn.style.display = "none";
@@ -25,6 +31,16 @@ pauseBtn.addEventListener('click', () => {
     stop_timer();
     playBtn.style.display = "block";
     pauseBtn.style.display = "none";
+});
+reports.forEach((report) => {
+    report.addEventListener('click', () => {
+        view_report();
+    });
+});
+settings.forEach((setting) => {
+    setting.addEventListener('click', () => {
+        view_setting();
+    });
 });
 
 /**
@@ -36,6 +52,13 @@ function init_var() {
 
     time = isWork ? work_time : relax_time;
     timer_html.innerHTML = get_time_string(time);
+
+    document.documentElement.style.setProperty("--head-color", 
+        isWork ? work_head_color : relax_head_color);
+    document.documentElement.style.setProperty("--body-color", 
+        isWork ? work_body_color : relax_body_color);
+    document.documentElement.style.setProperty("--hover-color", 
+        isWork ? work_hover_color : relax_hover_color);
 }
 
 /**
@@ -80,15 +103,28 @@ function get_time_string(time) {
 
 /**
  * 타이머가 다 됐을 때 다음 동작을 설정하는 함수
- * @todo 알람으로 사용자에게 시간이 다 되었음을 알려주는 기능 추가
  */
 function time_end() {
     stop_timer();
 
     alarm[0].play();
-    body.classList.toggle('relax');
-    navbar.classList.toggle('relax');
     
     isWork = !isWork;
     init_var();
+}
+
+/**
+ * 사용자의 통계를 보여주기
+ * @todo 통계 저장하고 깔끔하게 보여줄 수 있을까...?
+ */
+function view_report() {
+    alert('미구현입니다...!');
+}
+
+/**
+ * 사용자에게 설정창 보여주기
+ * @todo html에서 설정창 만들고, 이를 보여주기 구현
+ */
+function view_setting() {
+    alert('구현중입니다...!')
 }

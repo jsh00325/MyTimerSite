@@ -18,23 +18,23 @@
     <nav class="navbar">
         <div class="navbar__logo">
             <i class="fa-solid fa-clock"></i>
-            <a href="#">타이머</a>
+            <a href="#" id="small_title">타이머</a>
+            <a href="#" id="normal_title">뽀모도로 타이머</a>
         </div>
 
         <ul class="navbar__menu">
-            <li><a href="#">Report</a></li>
-            <li><a href="#">Setting</a></li>
+            <li><a href="#" id="report">Report</a></li>
+            <li><a href="#" id="setting">Setting</a></li>
         </ul>
 
-        <a href="#" class="navbar__toggleBtn">
-            <i class="fa-solid fa-bars"></i>
-        </a>
+        <ul class="navbar__button">
+            <a href="#" id="report"><i class="fa-solid fa-chart-simple"></i></a>
+            <a href="#" id="setting"><i class="fa-solid fa-gear"></i></a>
+        </ul>
     </nav>
     
-    <section class="timer" id="work">
-        <div class="timer__clock">
-            25:00
-        </div>
+    <section class="timer">
+        <div class="timer__clock"></div>
         <button class="timer__button">
             <a href="#" class="timer__button__play">
                 <i class="fa-solid fa-play"></i>
