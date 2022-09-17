@@ -75,7 +75,7 @@ li {
     border-radius: 10px;
     background: rgba(255,255,255,0.1);
 
-    margin: 10vh auto;
+    margin: 5vh auto;
     width: 580px;
 
     display: flex;
@@ -105,39 +105,58 @@ li {
     transform: translate(-50%, -50%);
 
     display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
 
     border-radius: 10px;
     background: rgba(200, 200, 200, 0.95);
 }
 .setting.active {
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 .setting article {
     width: 90%;
     margin: 20px 30px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
 }
-.setting .setting__title {
+.setting__title {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 
     font-size: 50px;
 }
-.setting .setting__time li {
+.setting__time li {
     display: flex;
     flex-direction: column;
 }
-.setting .setting__time li input {
+.setting__time li input {
     font-size: 26px;
     width: 50%;
 
     border-radius: 5px;
+}
+.setting__sound {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.setting__sound li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.setting__sound a {
+    padding: 20px 20px;
+    font-size: 34px;
+}
+.setting a {
+    color: black;
+}
+.setting a:hover {
+    color: gray;
 }
 
 @media screen and (max-width: 600px) {

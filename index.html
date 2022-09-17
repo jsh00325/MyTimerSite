@@ -63,29 +63,30 @@
         <article class="setting__time">
             <li>
                 <label for="setting__time__work">뽀모도로(분)</label>
-                <input type="number" value="25" id="setting__time__work">
+                <input type="number" value="25" min="1" id="setting__time__work">
             </li>
             <li>
                 <label for="setting__time__relax">휴식(분)</label>
-                <input type="number" value="5" id="setting__time__relax">
+                <input type="number" value="5" min="1" id="setting__time__relax">
             </li>
         </article>
 
         <article class="setting__sound">
-            <label for="setting__sound__type">종료 알람 설정</label>
-            <select name="type" id="setting__sound__type">
-                <option selected value="0">Sound 1</option>
-                <option value="1">Sound 2</option>
-            </select>
-
-            <label for="setting__sound__volume">알람 크기</label>
-            <input type="range" value="50" min="0" max="100" id="setting__sound__volume">
-
-            <button id="setting__sound__button">
+            <li>
+                <label for="setting__sound__type">종료 알람 설정</label>
+                <select name="type" id="setting__sound__type">
+                    <option selected value="0">Sound 1</option>
+                    <option value="1">Sound 2</option>
+                </select>
+                <p></p>
+                <label for="setting__sound__volume">알람 크기</label>
+                <input type="range" value="50" min="0" max="100" id="setting__sound__volume">
+            </li>
+            <li><a href="#" id="setting__sound__button">
                 <i class="fa-solid fa-volume-high"></i>
-            </button>
+            </a></li>
+            <li></li>
         </article>
     </section>
-
 </body>
 </html>
