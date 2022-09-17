@@ -2,21 +2,25 @@ const body = document.querySelector('body');
 
 const navbar = document.querySelector('.navbar');
 
-const reports = document.querySelectorAll('#report');
-const settings = document.querySelectorAll('#setting');
-const setting_menu = document.querySelector('.navbar__menu #setting');
-const setting_icon = document.querySelector('.navbar__button #setting');
+const reports = document.querySelectorAll('#reportBtn');
+const settings = document.querySelectorAll('#settingBtn');
 
 const timer_html = document.querySelector('.timer__clock');
 const playBtn = document.querySelector('.timer__button__play');
 const pauseBtn = document.querySelector('.timer__button__pause');
+
+const setting_window = document.querySelector('.setting');
+const sound_type = document.querySelector('#setting__sound__type');
+const sound_volume = document.querySelector('#setting__sound__volume');
+const soundBtn = document.querySelector('#setting__sound__button');
+const closeBtn = document.querySelector('.setting__close');
 
 const work_head_color = "#C65146", relax_head_color = "#379392";
 const work_body_color = "#EC6A5C", relax_body_color = "#519D9E";
 const work_hover_color = "#AF4034", relax_hover_color = "#548687";
 
 const alarm = [new Audio('sound/alarm1.mp3'), new Audio('sound/alarm2.mp3')];
-const work_time = 1, relax_time = 1;
+const work_time = 3, relax_time = 3;
 
 var isWork = true, time, timer;
 
@@ -39,8 +43,15 @@ reports.forEach((report) => {
 });
 settings.forEach((setting) => {
     setting.addEventListener('click', () => {
-        view_setting();
+        setting_window.classList.toggle('active');
     });
+});
+closeBtn.addEventListener('click', () => {
+    setting_window.classList.toggle('active');
+});
+soundBtn.addEventListener('click', () => {
+    alarm[sound_type.value].volume = sound_volume.value / 100;
+    alarm[sound_type.value].play();
 });
 
 /**
@@ -107,7 +118,8 @@ function get_time_string(time) {
 function time_end() {
     stop_timer();
 
-    alarm[0].play();
+    alarm[sound_type.value].volume = sound_volume.value / 100;
+    alarm[sound_type.value].play();
     
     isWork = !isWork;
     init_var();
@@ -119,12 +131,4 @@ function time_end() {
  */
 function view_report() {
     alert('미구현입니다...!');
-}
-
-/**
- * 사용자에게 설정창 보여주기
- * @todo html에서 설정창 만들고, 이를 보여주기 구현
- */
-function view_setting() {
-    alert('구현중입니다...!')
 }

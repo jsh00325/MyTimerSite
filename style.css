@@ -15,6 +15,9 @@ a {
     text-decoration: none;
     color: var(--text-color);
 }
+li {
+    list-style: none;
+}
 
 .navbar {
     display: flex;
@@ -44,7 +47,6 @@ a {
 .navbar__menu {
     display: flex;
     justify-content: space-between;
-    list-style: none;
     font-size: 18px;
     padding-left: 0;
 }
@@ -60,7 +62,6 @@ a {
     display: none;
     justify-content: space-between;
     font-size: 18px;
-    list-style: none;
 }
 .navbar__button a {
     padding: 6px 12px;
@@ -95,6 +96,50 @@ a {
     display: none;
 }
 
+.setting {
+    width: 500px;
+    
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    border-radius: 10px;
+    background: rgba(200, 200, 200, 0.95);
+}
+.setting.active {
+    display: flex;
+}
+.setting article {
+    width: 90%;
+    margin: 20px 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.setting .setting__title {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 50px;
+}
+.setting .setting__time li {
+    display: flex;
+    flex-direction: column;
+}
+.setting .setting__time li input {
+    font-size: 26px;
+    width: 50%;
+
+    border-radius: 5px;
+}
+
 @media screen and (max-width: 600px) {
     .navbar__menu {
         display: none;
@@ -113,7 +158,12 @@ a {
     .timer__button {
         font-size: 16.5vw;
     }
+
+    .setting {
+        width: 83%;
+    }
 }
+
 @media screen and (max-width: 368px) {
     #normal_title {
         display: none;

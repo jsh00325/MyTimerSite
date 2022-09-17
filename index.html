@@ -2,19 +2,26 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keyword" content="timer, online timer, 타이머, 온라인타이머">
     <meta name="description" content=" 간단한 온라인 타이머">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <title>Online Timer⏱</title>
+    
+    <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/36122c3a09.js" crossorigin="anonymous"></script>
+    
+    <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">   
-    <title>Online Timer⏱</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    
+    <!-- My Files -->
+    <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
 </head>
 
 <body>
+    <!-- 상단 navbar -->
     <nav class="navbar">
         <div class="navbar__logo">
             <i class="fa-solid fa-clock"></i>
@@ -23,16 +30,17 @@
         </div>
 
         <ul class="navbar__menu">
-            <li><a href="#" id="report">Report</a></li>
-            <li><a href="#" id="setting">Setting</a></li>
+            <li><a href="#" id="reportBtn">Report</a></li>
+            <li><a href="#" id="settingBtn">Setting</a></li>
         </ul>
 
         <ul class="navbar__button">
-            <a href="#" id="report"><i class="fa-solid fa-chart-simple"></i></a>
-            <a href="#" id="setting"><i class="fa-solid fa-gear"></i></a>
+            <a href="#" id="reportBtn"><i class="fa-solid fa-chart-simple"></i></a>
+            <a href="#" id="settingBtn"><i class="fa-solid fa-gear"></i></a>
         </ul>
     </nav>
     
+    <!-- 타이머 부분 -->
     <section class="timer">
         <div class="timer__clock"></div>
         <button class="timer__button">
@@ -44,5 +52,40 @@
             </a>
         </button>
     </section>
+
+    <!-- 설정창 구현 -->
+    <section class="setting">
+        <article class="setting__title">
+            <div class="title">Setting</div>
+            <a href="#" class="setting__close">x</a>
+        </article>
+
+        <article class="setting__time">
+            <li>
+                <label for="setting__time__work">뽀모도로(분)</label>
+                <input type="number" value="25" id="setting__time__work">
+            </li>
+            <li>
+                <label for="setting__time__relax">휴식(분)</label>
+                <input type="number" value="5" id="setting__time__relax">
+            </li>
+        </article>
+
+        <article class="setting__sound">
+            <label for="setting__sound__type">종료 알람 설정</label>
+            <select name="type" id="setting__sound__type">
+                <option selected value="0">Sound 1</option>
+                <option value="1">Sound 2</option>
+            </select>
+
+            <label for="setting__sound__volume">알람 크기</label>
+            <input type="range" value="50" min="0" max="100" id="setting__sound__volume">
+
+            <button id="setting__sound__button">
+                <i class="fa-solid fa-volume-high"></i>
+            </button>
+        </article>
+    </section>
+
 </body>
 </html>
