@@ -75,7 +75,7 @@ li {
     border-radius: 10px;
     background: rgba(255,255,255,0.1);
 
-    margin: 5vh auto;
+    margin: 8vh auto;
     width: 580px;
 
     display: flex;
@@ -85,6 +85,8 @@ li {
 .timer__clock {
     color: var(--text-color);
     font-size: 200px;
+    font-family: 'Arial Rounded MT', 'monospace';
+    font-weight: bold;
 }
 .timer__button {
     background: none;
