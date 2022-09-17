@@ -85,7 +85,7 @@ li {
 .timer__clock {
     color: var(--text-color);
     font-size: 200px;
-    font-family: 'Arial Rounded MT', 'monospace';
+    font-family: 'Arial Rounded MT', 'jua', 'monospace';
     font-weight: bold;
 }
 .timer__button {
